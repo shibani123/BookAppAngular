@@ -1,0 +1,49 @@
+<div class= "container-fluid">
+    <div class= "row">
+        <div class= "col bg-dark text-white">
+            <a class = "navbar-brand">
+                ACI Book Store
+            </a>
+              
+        </div>
+    </div>
+    <div class="row">
+        
+        <div class="col-9 p-2">
+            
+           <div *ngFor= "let book of Books" class="card m-1 p-1 bg-light"  >
+                <h4>
+                        
+                    {{ book.booktitle | uppercase }}
+                    <span class= "badge badge-pill badge-primary float-right">
+                        {{ book.bookprice | currency:"INR" }} 
+                    </span>
+                </h4>
+                <div class="card-text bg-white p-1">
+                    {{ book.bookauthor }}
+                    <button class="btn btn-success btn-sm float-right"
+                
+                    (click)="addProductToCart(book)">
+                    Add To Cart
+                </button>
+                </div>
+           </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-9 p-5">
+            <button class="btn btn-success btn-sm float-right" routerLink="/login">
+                LogIn
+            </button>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10 p-6">
+            <button class="btn btn-success btn-sm float-right" routerLink="/signup">
+                SignUp
+            </button>
+
+        </div>
+    </div>
+</div>
